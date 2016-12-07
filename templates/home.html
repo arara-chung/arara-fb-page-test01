@@ -2,17 +2,7 @@
 {% block title %}{{ super() }}Arara{% endblock %}
 {% block content %}
 
-  <!-- Load Facebook SDK for JavaScript -->
-  <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=150908445389235";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-
+<!-- Load Facebook SDK for JavaScript 
     <script>
       window.fbAsyncInit = function() {
         FB.init({
@@ -35,6 +25,18 @@
     <div class="{{ name }}-container">
         <p>A facebook page API testing site</p>
     </div>
+-->
+
+  <!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=150908445389235";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 
 
 <!-- Your like-share button code -->
@@ -45,7 +47,10 @@
       data-show-faces="true">
     </div>
 
-
+<br>
+<br>
+<br>
+<hr />
 
   <!-- Your save button code -->
   <div class="fb-save" 
@@ -59,17 +64,12 @@
 <br>
 <br>
 <br>
-
+<hr />
 
 <!-- Your share dialog code -->
 <p>Click the button below to trigger a Share Dialog</p>
 
 <div id="shareBtn" class="btn btn-success clearfix">Share</div>
-
-<p style="margin-top: 50px">
-  <hr />
-  <a class="btn btn-small"  href="https://developers.facebook.com/docs/sharing/reference/share-dialog">Share Dialog Documentation</a>
-</p>
 
 <script>
 document.getElementById('shareBtn').onclick = function() {
@@ -80,6 +80,11 @@ document.getElementById('shareBtn').onclick = function() {
   }, function(response){});
 }
 </script>
+
+<br>
+<br>
+<br>
+<hr />
 
 {% endblock %}
 
