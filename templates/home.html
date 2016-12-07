@@ -2,10 +2,16 @@
 {% block title %}{{ super() }}Arara{% endblock %}
 {% block content %}
 
+  <!-- Load Facebook SDK for JavaScript -->
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=150908445389235";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
-    <div class="{{ name }}-container">
-        <p>A facebook page API testing site</p>
-    </div>
 
     <script>
       window.fbAsyncInit = function() {
@@ -24,6 +30,12 @@
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
     </script>
+    
+
+    <div class="{{ name }}-container">
+        <p>A facebook page API testing site</p>
+    </div>
+
 
     <div
       class="fb-like"
@@ -33,20 +45,14 @@
     </div>
 
 
-  <!-- Load Facebook SDK for JavaScript -->
-  <div id="fb-root"></div>
-  <script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
+
 
   <!-- Your save button code -->
   <div class="fb-save" 
     data-uri="http://www.your-domain.com/your-page.html">
   </div>
+
+<div class="fb-save" data-uri="https://arara-fb-page-test01.herokuapp.com/" data-size="large"></div>
 
 
 {% endblock %}
