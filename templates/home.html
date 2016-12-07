@@ -39,6 +39,8 @@
 
 
 
+
+<hr />
 <!-- Your like-share button code -->
     <div
       class="fb-like"
@@ -85,6 +87,26 @@ document.getElementById('shareBtn').onclick = function() {
 <br>
 <br>
 <hr />
+
+<!-- Your feed dialog code -->
+<p>Click the button below to trigger a Share Dialog</p>
+
+<div id="shareBtn002" class="btn btn-success clearfix">Share</div>
+
+<script>
+document.getElementById('shareBtn002').onclick = function() {
+    FB.ui({
+      method: 'feed',
+      link: 'https://arara-fb-page-test01.herokuapp.com/',
+      caption: 'An example arara caption',
+    }, function(response){});
+}
+</script>
+
+
+
+
+
 
 {% endblock %}
 
