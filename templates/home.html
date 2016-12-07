@@ -71,10 +71,10 @@
 <!-- Your share dialog code -->
 <p>Click the button below to trigger a Share Dialog</p>
 
-<div id="shareBtn" class="btn btn-success clearfix">Share</div>
+<div id="shareBtn001" class="btn btn-success clearfix">Share</div>
 
 <script>
-document.getElementById('shareBtn').onclick = function() {
+document.getElementById('shareBtn001').onclick = function() {
   FB.ui({
     method: 'share',
     display: 'popup',
@@ -82,19 +82,53 @@ document.getElementById('shareBtn').onclick = function() {
   }, function(response){});
 }
 </script>
+<!--
+https://www.facebook.com/dialog/share?
+  app_id=145634995501895
+  &display=popup
+  &href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2F
+  &redirect_uri=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fexplorer
+-->
+
 
 <br>
 <br>
 <br>
 <hr />
 
-<!-- Your feed dialog code -->
-<p>Click the button below to trigger a Feed Dialog</p>
 
-<div id="shareBtn002" class="btn btn-success clearfix">Feed</div>
+
+<!-- Your open graph dialog code -->
+<p>Click the button below to trigger a Open Graph Dialog</p>
+
+<div id="shareBtn002" class="btn btn-success clearfix">Open Graph</div>
 
 <script>
 document.getElementById('shareBtn002').onclick = function() {
+    FB.ui({
+      method: 'share_open_graph',
+      action_type: 'og.likes',
+      action_properties: JSON.stringify({
+          object:'https://developers.facebook.com/docs/',
+      })
+    }, function(response){});
+}
+</script>
+<br>
+<br>
+<br>
+<hr />
+
+
+
+
+<!-- Your feed dialog code -->
+<p>Click the button below to trigger a Feed Dialog</p>
+
+<div id="shareBtn003" class="btn btn-success clearfix">Feed</div>
+
+<script>
+document.getElementById('shareBtn003').onclick = function() {
     FB.ui({
       method: 'feed',
       link: 'https://arara-fb-page-test01.herokuapp.com/',
@@ -102,26 +136,39 @@ document.getElementById('shareBtn002').onclick = function() {
     }, function(response){});
 }
 </script>
-
+<!--
+https://www.facebook.com/dialog/feed?
+  app_id=145634995501895
+  &display=popup&amp;caption=An%20example%20caption 
+  &link=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2F
+  &redirect_uri=https://developers.facebook.com/tools/explorer
+-->
 <br>
 <br>
 <br>
 <hr />
 
 
+
 <!-- Your feed dialog code -->
 <p>Click the button below to trigger a Send Dialog</p>
 
-<div id="shareBtn003" class="btn btn-success clearfix">Send</div>
+<div id="shareBtn004" class="btn btn-success clearfix">Send</div>
 
 <script>
-document.getElementById('shareBtn003').onclick = function() {
+document.getElementById('shareBtn004').onclick = function() {
     FB.ui({
       method: 'send',
       link: 'http://www.nytimes.com/interactive/2015/04/15/travel/europe-favorite-streets.html',
     });
 }
 </script>
+<!-- 
+http://www.facebook.com/dialog/send?
+  app_id=123456789
+  &amp;link=http://www.nytimes.com/interactive/2015/04/15/travel/europe-favorite-streets.html
+  &amp;redirect_uri=https://www.domain.com/
+-->
 
 <br>
 <br>
