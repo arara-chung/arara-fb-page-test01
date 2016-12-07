@@ -89,9 +89,9 @@ document.getElementById('shareBtn').onclick = function() {
 <hr />
 
 <!-- Your feed dialog code -->
-<p>Click the button below to trigger a Share Dialog</p>
+<p>Click the button below to trigger a Feed Dialog</p>
 
-<div id="shareBtn002" class="btn btn-success clearfix">Share</div>
+<div id="shareBtn002" class="btn btn-success clearfix">Feed</div>
 
 <script>
 document.getElementById('shareBtn002').onclick = function() {
@@ -102,6 +102,32 @@ document.getElementById('shareBtn002').onclick = function() {
     }, function(response){});
 }
 </script>
+
+<br>
+<br>
+<br>
+<hr />
+
+
+<!-- Your feed dialog code -->
+<p>Click the button below to trigger a Send Dialog</p>
+
+<div id="shareBtn003" class="btn btn-success clearfix">Send</div>
+
+<script>
+document.getElementById('shareBtn003').onclick = function() {
+    FB.ui({
+      method: 'send',
+      link: 'http://www.nytimes.com/interactive/2015/04/15/travel/europe-favorite-streets.html',
+    });
+}
+</script>
+
+<br>
+<br>
+<br>
+<hr />
+
 
 
 
