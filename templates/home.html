@@ -30,13 +30,14 @@
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
     </script>
-    
+
 
     <div class="{{ name }}-container">
         <p>A facebook page API testing site</p>
     </div>
 
 
+<!-- Your like-share button code -->
     <div
       class="fb-like"
       data-share="true"
@@ -54,6 +55,27 @@
 
 <div class="fb-save" data-uri="https://arara-fb-page-test01.herokuapp.com/" data-size="large"></div>
 
+
+
+<!-- Your share dialog code -->
+<p>Click the button below to trigger a Share Dialog</p>
+
+<div id="shareBtn" class="btn btn-success clearfix">Share</div>
+
+<p style="margin-top: 50px">
+  <hr />
+  <a class="btn btn-small"  href="https://developers.facebook.com/docs/sharing/reference/share-dialog">Share Dialog Documentation</a>
+</p>
+
+<script>
+document.getElementById('shareBtn').onclick = function() {
+  FB.ui({
+    method: 'share',
+    display: 'popup',
+    href: 'https://developers.facebook.com/docs/',
+  }, function(response){});
+}
+</script>
 
 {% endblock %}
 
